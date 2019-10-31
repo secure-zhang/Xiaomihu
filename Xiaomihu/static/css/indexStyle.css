@@ -1,0 +1,83 @@
+*{margin: 0;padding: 0}
+
+body {
+font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+    font-size: 1.6em;
+    color: #0b0b0b;
+    overflow-x: hidden;
+    background-color: white;
+
+}
+
+/*头部*/
+#header {
+    height: 100vh;
+    min-height: 375px;
+    position: relative;
+}
+#header .rt{
+    height: 100vh;
+}
+#header .head_rt_img1{
+
+    background: url(../image/gallery-img-06.jpg) no-repeat center;
+    background-size: cover;
+    height: 45%;
+    top: 15%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    opacity:0.8;
+}
+#header .head_rt_img1:hover{opacity:1;}
+#header .head_rt_img2{
+    background: url(../image/gallery-img-04.jpg) no-repeat center ;
+    background-size: cover;
+    height: 45%;
+    top: 30%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    opacity:0.8;
+}
+#header .head_rt_img2:hover{opacity:1;}
+#header .head_rt_img3{
+    background: url(../image/gallery-img-03.jpg) no-repeat center ;
+    background-size: cover;
+    height: 45%;
+    top: 45%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    opacity:0.8;
+}
+#header .head_rt_img3:hover{opacity:1;}
+#header .lt{
+    height: 100vh;
+}
+
+#header .lt_about{
+    left: 20%;
+    top: 20%;
+    height: 80%;
+    position: relative;
+    opacity:0.8;
+    writing-mode:tb-rl;
+}
+#header .lt_about p{
+    font-size: 56px;
+
+}
+
+
+
+/*内容*/
+#mainer{
+    height: 100vh;
+    min-height: 375px;
+    position: relative;
+
+}
+
+
+
