@@ -23,7 +23,7 @@ font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
     background: url(../image/gallery-img-06.jpg) no-repeat center;
     background-size: cover;
     height: 45%;
-    top: 15%;
+    top: 10%;
     position: relative;
     border-radius: 5px;
     box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -34,7 +34,7 @@ font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
     background: url(../image/gallery-img-04.jpg) no-repeat center ;
     background-size: cover;
     height: 45%;
-    top: 30%;
+    top: 25%;
     position: relative;
     border-radius: 5px;
     box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -45,7 +45,7 @@ font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
     background: url(../image/gallery-img-03.jpg) no-repeat center ;
     background-size: cover;
     height: 45%;
-    top: 45%;
+    top: 40%;
     position: relative;
     border-radius: 5px;
     box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -63,6 +63,7 @@ font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
     position: relative;
     opacity:0.8;
     writing-mode:tb-rl;
+
 }
 #header .lt_about p{
     font-size: 56px;
@@ -70,7 +71,10 @@ font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
 #header .lt_about p:hover{
     text-shadow:0px 0px 8px #fff, 0px 0px 42px #9d9d9d, 0px 0px 72px #3ba0dd,0px 0px 150px #fa5;
 }
-
+#header .lt_music {
+    left: 20%;
+    position: relative;
+}
 
 
 
