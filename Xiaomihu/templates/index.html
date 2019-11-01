@@ -7,6 +7,7 @@
     <title>Xiaomihu</title>
     <link rel="stylesheet" href="../static/css/bootstrap.css">
     <link rel="stylesheet" href="../static/css/indexStyle.css">
+    <link rel="stylesheet" href="../static/css/layui.css">
 
 </head>
 <body>
@@ -16,15 +17,22 @@
   <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-md-6 lt">
-          <div class="lt_about">
-            <p>你好。</p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>我是小迷糊张，</p>
-          </div>
-            <div class="lt_music">
-                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1399664349&auto=0&height=32"></iframe>
+            <div class="lt_about">
+                <p>你好。</p>
+                <p>我是小迷糊张，</p>
+                <p class="main_icon">
+                    <a href="{{url_for('index')}}"><i class="layui-icon layui-icon-home" ></i>  </a>
+                    <a href="{{url_for('blogIndex')}}"><i class="layui-icon layui-icon-user" ></i>  </a>
+                    <a href=""><i class="layui-icon layui-icon-picture" ></i>  </a>
+                    <a href=""><i class="layui-icon layui-icon-login-weibo" ></i>  </a>
+                    <a href=""><i class="layui-icon layui-icon-login-wechat" ></i>  </a>
+                    <a href=""><i class="layui-icon layui-icon-dialogue" ></i>  </a>
+                    <a href=""><i class="layui-icon layui-icon-share" ></i>  </a>
+                    <a href=""><i class="layui-icon layui-icon-friends" ></i>  </a>
+                    <a href=""><i class="layui-icon layui-icon-about" ></i>  </a>
+                </p>
             </div>
+
         </div>
         <div class="col-xs-12 col-md-6 rt">
           <div class="col-xs-4 head_rt_img3"></div>
@@ -44,4 +52,6 @@
 </body>
 <script src="../static/js/jquery.min.js"></script>
 <script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/layui.js"></script>
+
 </html>
