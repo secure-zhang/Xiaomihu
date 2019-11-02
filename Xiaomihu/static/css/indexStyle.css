@@ -18,15 +18,15 @@ body {
     height: 100vh;
 }
 #header .head_rt_img1{
-    background: url(../image/gallery-img-06.jpg) no-repeat center;
+    background: url(../image/png_2019-11-02_6.jpg) no-repeat center ;
     background-size: cover;
     height: 45%;
-    top: 10%;
+    top: 10vh;
     position: relative;
     border-radius: 5px;
     box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
     opacity:0.8;
-        min-height: 375px;
+    min-height: 375px;
 }
 #header .head_rt_img1:hover{opacity:1;}
 #header .head_rt_img2{
@@ -43,7 +43,7 @@ body {
 }
 #header .head_rt_img2:hover{opacity:1;}
 #header .head_rt_img3{
-    background: url(../image/gallery-img-03.jpg) no-repeat center ;
+    background: url(../image/png_2019-11-02_1.jpg) no-repeat center ;
     background-size: cover;
     height: 45%;
     top: 40%;
@@ -56,6 +56,19 @@ body {
 }
 #header .head_rt_img3:hover{opacity:1;}
 
+#header .head_rt_img4{
+    background: url(../image/gallery-img-04.jpg) no-repeat center ;
+    background-size: cover;
+    height: 45%;
+    top: 40%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow:10px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    opacity:0.8;
+    min-height: 375px;
+
+}
+#header .head_rt_img4:hover{opacity:1;}
 #header .lt{
     top: 0;
     left: 0;
@@ -71,7 +84,6 @@ body {
     position: absolute;
     opacity:0.8;
     writing-mode:tb-rl;
-    line-height: 15vh;
 }
 #header .lt_about span{
     font-size: 0.5em;

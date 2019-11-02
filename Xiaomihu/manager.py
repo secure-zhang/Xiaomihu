@@ -15,5 +15,5 @@ def xk():
     return render_template('xk.html')
 
 if __name__ == '__main__':
-    app.run('0.0.0.0',8000)
-    # app.run()
+    # app.run('0.0.0.0',8000)
+    app.run()
