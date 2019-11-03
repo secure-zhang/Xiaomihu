@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block base %}
+<link rel="stylesheet" href="{{ url_for('static',filename='editor/css/editormd.css') }}"/>
+<link rel="stylesheet" href="../static/css/blogAdminStyle.css"/>
+
+
+<div id="mainer">
+    <form action="{{ url_for('blogAdmin') }}" method="post">
+
+
+
+        <div class="container">
+            <div class="row cen">
+                <div class="col-xs-6">
+                    标题： {{ form.title(class='title') }}
+                </div>
+                <div class="col-xs-3">
+                    分类： {{ form.typeId(class='typeId') }}
+                </div>
+                <div class="col-xs-3">
+                    <input id="uploaderFile" name="img" type="file" class="btn btn-default" data-add="0" accept="image/*" onchange="changeFile(this)"/>
+                    <input type="hidden" name="img64base" id="img64base"/>
+                    {{ form.csrf_token() }}
+                    {{ form.submit(class='btn btn-primary sub') }}
+                </div>
+            </div>
+            <div id="fancy-editormd" class="editormd">
+                {{ form.content(style="display:none;") }}
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script src="{{ url_for('static',filename='editor/examples/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='editor/editormd.min.js') }}"></script>
+    <script src="../static/js/lrz.bundle.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        editormd("fancy-editormd", {
+            // width: "100%", 请不要添加
+            height: 640,
+            syncScrolling: "single",
+            path: "{{ url_for('static',filename='editor/lib/') }}",
+            saveHTMLToTextarea : true
+        });
+    });
+    var uploaderFile = document.querySelector('#uploaderFile');
+    uploaderFile.addEventListener('change', function () {
+     lrz(this.files[0])
+            .then(function (rst) {
+                // 处理成功会执行
+                console.log(rst.base64);
+                var img64base = document.querySelector('#img64base');
+                 img64base.value=rst.base64;
+                 uploaderFile.value='ok'
+            })
+            .catch(function (err) {
+                // 处理失败会执行
+            })
+            .always(function () {
+                // 不管是成功失败，都会执行
+            });
+    });
+</script>
+
+
+
+{% endblock %}

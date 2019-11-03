@@ -73,18 +73,21 @@ html, body {
 }
 
 
-.menu{
+.main_icon{
 	height: 10vh;
 	font-size: 44px;
     text-align: center;
 }
-.menu a{
+.main_icon a{
     text-decoration: none;
 }
-
-.menu a:hover{
+.main_icon i{
+	font-size: 22px;
+}
+.main_icon a:hover{
     color: #4cae4c;
 }
+
 
  @media only screen and (max-width: 970px)  {
 

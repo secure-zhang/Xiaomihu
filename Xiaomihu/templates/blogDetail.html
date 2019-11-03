@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/layui.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/blogDetailStyle.css') }}"/>
+</head>
+<body>
+    <div id="mainer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 cen1">
+
+                </div>
+                <div class="col-xs-12 cen2">
+                    <div class="panel panel-default">
+                      <div class="panel-heading lead text-center">{{blogItem.title}}</div>
+                      <ol class="breadcrumb pathNav">
+                      <li><a href="#">博客</a></li>
+                      <li><a href="{{url_for('blogType',typeId=blogTypeItem.id)}}">{{blogTypeItem.typeName}}</a></li>
+                      <li class="active">
+                          <small>
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <span>{{blogItem.addTime }}</span>
+                        </small>
+                      </li>
+                    </ol>
+                    </div>
+                      <div class="panel-body">
+<!--                                 先调用safe转义过滤器, 再调用striptags清除html渲染后的格式-->
+                        {{blogItem.content |safe  }}
+                      </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 cen3">
+                    <p class="main_icon">
+                        <a href="{{url_for('index')}}"><i class="layui-icon layui-icon-home" ></i>  </a>
+                        <a href="{{url_for('blogIndex')}}"><i class="layui-icon layui-icon-user" ></i>  </a>
+                        <a href="{{url_for('photoIndex')}}"><i class="layui-icon layui-icon-picture" ></i>  </a>
+                        <a href="https://weibo.com/u/6285420116"><i class="layui-icon layui-icon-login-weibo" ></i>  </a>
+                         <a data-toggle="modal" data-target=".bs-example-modal-sm"><i class="layui-icon layui-icon-login-wechat" ></i> </a>
+                        <a href=""><i class="layui-icon layui-icon-dialogue" ></i>  </a>
+                        <a href=""><i class="layui-icon layui-icon-share" ></i>  </a>
+                        <a href=""><i class="layui-icon layui-icon-friends" ></i>  </a>
+                        <a href=""><i class="layui-icon layui-icon-about" ></i>  </a>
+                    </p>
+
+                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                      <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <img src="{{url_for('static',filename='../static/image/vx.png')}}" class="img-responsive center-block" alt="">
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/layui.js') }}"></script>
+</html>

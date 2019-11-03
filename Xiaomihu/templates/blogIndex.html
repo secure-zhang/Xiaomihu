@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <title>Xiaomihu</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/layui.css">
+    <link rel="stylesheet" href="../static/css/blogIndexStyle.css">
+
+</head>
+<body>
+
+
+<!-- 内容 -->
+<div id="mainer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-xs-12">
+<!--                个人简介-->
+                <div class="main_lt">
+                    <div class="main_ce1"></div>
+                    <div class="main_ce2"></div>
+                    <div class="main_ce3">
+                        <img src="../static/image/png_2019-11-02_8.jpg" class="img-circle">
+                        <p class="c_net_name">小迷糊张的博客</p>
+                        <p class="e_net_name">Misted's Blog</p>
+                        <p class="main_icon">
+                            <a href="{{url_for('index')}}"><i class="layui-icon layui-icon-home" ></i>  </a>
+                            <a href="{{url_for('blogIndex')}}"><i class="layui-icon layui-icon-user" ></i>  </a>
+                            <a href="{{url_for('photoIndex')}}"><i class="layui-icon layui-icon-picture" ></i>  </a>
+                            <a href="https://weibo.com/u/6285420116"><i class="layui-icon layui-icon-login-weibo" ></i>  </a>
+                            <a data-toggle="modal" data-target=".bs-example-modal-sm"><i class="layui-icon layui-icon-login-wechat" ></i> </a>
+                            <a href=""><i class="layui-icon layui-icon-dialogue" ></i>  </a>
+                            <a href=""><i class="layui-icon layui-icon-share" ></i>  </a>
+                            <a href=""><i class="layui-icon layui-icon-friends" ></i>  </a>
+                            <a href=""><i class="layui-icon layui-icon-about" ></i>  </a>
+                        </p>
+
+                    </div>
+                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                          <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <img src="../static/image/vx.png" class="img-responsive center-block" alt="">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-xs-12">
+                <div class="main_rt">
+                    <!--                博客列表页-->
+
+                    <div class="blogList">
+                        {% for i in blogItems.items%}
+                            <div class="blogs">
+                                <div class="imgData"><img src="{{i.img64base}}" alt=""></div>
+                                <div class="title">
+                                    <a href="{{url_for('blogDetail',blogId=i.id)}}">{{i.title}}</a>
+                                </div>
+                                <div class="content">
+<!--                                    先调用safe转义过滤器, 再调用striptags清除html渲染后的格式-->
+                                    <span>{{i.content |safe|striptags|truncate  }}</span>
+                                </div>
+                                <div class="typeName">
+                                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                                    {% if i.typeId==1 %}
+                                      <span>测试分类</span>
+                                     {% endif %}
+                                </div>
+                                <div class="addTime">
+                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                    <span>{{i.addTime }}</span>
+                                </div>
+                                <div class="reading">
+                                    <span class=" glyphicon glyphicon-eye-open " aria-hidden="true"></span>
+                                    <span>浏览（{{i.reading}}）</span>
+                                </div>
+                                <a href="{{url_for('blogDetail',blogId=i.id)}}" class="read">阅读原文</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <!--                分页-->
+
+                    <div class=" page">
+                        <div class="form-group text-center pages">
+                            {% if blogItems.has_prev %}
+                                <a class="btn  btn-primary a_width  "  href="{{ url_for('blogIndex',page = blogItems.prev_num) }}">上一页</a>
+                            {% else %}
+                                <button class="btn btn-default a_width disabled" type="button">首页</button>
+                            {% endif %}
+                            {% if blogItems.has_next %}
+                                <a class="btn  btn-primary a_width"   href="{{ url_for('blogIndex',page = blogItems.next_num) }}">下一页</a>
+                            {% else %}
+                                <button class="btn btn-default a_width disabled" type="button">尾页</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+</body>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/layui.js"></script>
+<script type="text/javascript">
+
+</script>
+</html>

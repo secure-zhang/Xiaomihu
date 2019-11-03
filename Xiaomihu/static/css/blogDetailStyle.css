@@ -1,0 +1,51 @@
+*{margin: 0;padding: 0}
+
+
+body {
+    font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+    font-size: 1.6em;
+    color: #0b0b0b;
+    overflow-x: hidden;
+    background-color: white;
+
+}
+
+#mainer{
+    width: 100%;
+    height: 100vh;
+}
+
+#mainer .cen1{
+
+}
+
+#mainer .cen2{
+    height: 88vh;
+    white-space:nowrap;
+    overflow-x:auto;
+    width: 100%;
+    border-bottom: 1px solid #0C0C0C;
+}
+#mainer .cen2 img{
+    width: 300px;
+    height: 200px;
+}
+#mainer .cen3{
+    height: 10vh;
+}
+
+
+#mainer .cen3 .main_icon{
+	height: 10vh;
+	font-size: 44px;
+    text-align: center;
+}
+#mainer .cen3 .main_icon a{
+    text-decoration: none;
+}
+#mainer .cen3 .main_icon i{
+	font-size: 22px;
+}
+#mainer .cen3 .main_icon a:hover{
+    color: #4cae4c;
+}
