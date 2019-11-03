@@ -12,7 +12,7 @@ blog = Blueprint('blog',__name__)
 def blogIndex():
     page = request.args.get('page',1)
     blogItems = db.session.query(Blog).join(BlogType,Blog.typeId == BlogType.id).order_by(Blog.addTime.desc()).paginate(int(page), per_page=4, error_out=False)
-    return render_template('blogIndex.html',blogItems=blogItems)
+    return render_template('new_blog_index.html',blogItems=blogItems)
 
 # 博客详情页面
 @app.route('/blog/blogDetail',methods=['GET'])
@@ -20,7 +20,7 @@ def blogIndex():
 def blogDetail(blogId):
     blogItem = Blog.query.filter(Blog.id==blogId).first()
     blogTypeItem = BlogType.query.filter(BlogType.id==blogItem.typeId).first()
-    return render_template('blogDetail.html',blogItem=blogItem,blogTypeItem=blogTypeItem)
+    return render_template('new_blog_detail.html',blogItem=blogItem,blogTypeItem=blogTypeItem)
 
 # 博客上传页面
 @app.route('/blog/blogAdmin',methods=['GET','POST'])

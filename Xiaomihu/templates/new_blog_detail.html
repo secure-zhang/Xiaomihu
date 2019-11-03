@@ -1,0 +1,32 @@
+{% extends 'new_base.html' %}
+{% block base %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/new_blog_detail.css') }}"/>
+
+
+<div id="mainer">
+    <div class="container-fluid">
+        <div class="row">
+                <div class="col-xs-12 cen">
+                    <div class="panel panel-default">
+                      <div class="panel-heading lead text-center">{{blogItem.title}}</div>
+                      <ol class="breadcrumb pathNav">
+                      <li><a href="#">博客</a></li>
+                      <li><a href="{{url_for('blogType',typeId=blogTypeItem.id)}}">{{blogTypeItem.typeName}}</a></li>
+                      <li class="active">
+                          <small>
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                            <span>{{blogItem.addTime }}</span>
+                        </small>
+                      </li>
+                    </ol>
+                    </div>
+                      <div class="panel-body">
+<!--                                 先调用safe转义过滤器, 再调用striptags清除html渲染后的格式-->
+                        {{blogItem.content |safe  }}
+                      </div>
+                    </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

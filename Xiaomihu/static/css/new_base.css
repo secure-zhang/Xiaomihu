@@ -1,0 +1,63 @@
+
+
+*{margin: 0;padding: 0}
+
+body{
+        font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+    overflow-x: hidden;
+    background-color: #CCCCCC;
+}
+#warper .menv a{
+    text-decoration: none;
+}
+#warper .menv a:hover{
+    color: #31b0d5;
+}
+
+
+@media only screen and (min-width: 1200px)  {
+    body {
+
+        position: relative;
+}
+    /*在此页面大小中左侧固定，右侧负责展示*/
+    #warper .lt{
+        height: 100vh;
+        writing-mode:tb-rl;
+        position: fixed;
+        left: 0;
+        top: 0;
+}
+    #warper .rt{
+        min-height: 100vh;
+        position: relative;
+        left: 10%;
+        top: 0;
+        width: 90%;
+}
+    #warper .menv i{
+        font-size:3em;
+}
+}
+
+@media only screen and (max-width: 1200px)  {
+    #warper .lt{
+}
+    #warper .menv i{
+        font-size:2em;
+}
+    #warper .rt{
+        height: 100vh;
+}
+    /*导航固定,并取消默认带的圆角,并添加阴影,透明度*/
+    .navbar {
+        /*position: fixed;*/
+        z-index: 1000;
+        width: 100%;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+    }
+    .navbar .navbar-nav a{
+        color: #0b0b0b;
+    }
+}

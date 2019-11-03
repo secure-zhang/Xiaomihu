@@ -1,0 +1,130 @@
+
+#mainer .blogList{
+}
+#mainer .blogs{
+    height: 220px;
+    border-bottom: 1px solid #0C0C0C;
+    position: relative;
+}
+
+@media only screen and (max-width: 1200px) {
+.blogs .imgData{
+    width: 150px;
+    height:120px;
+    position: absolute;
+    right: 10%;
+    top: 50px;
+}
+        .blogs .info{
+                    position: absolute;
+    width: 60%;
+
+            left: 10%;
+
+    }
+    .blogs .title{
+            position: absolute;
+
+    font-size: 18px;
+    top: 50px;
+    display:inline-block;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+        .blogs .content{
+            display: none;
+}
+    .blogs .typeName{
+    position: absolute;
+        top: 100px;
+}
+    .blogs .addTime{
+    position: absolute;
+    top: 130px;
+}
+    .blogs .reading{
+        display: none;
+    }
+    .blogs .read{
+    top: 150px;
+    position: absolute;
+    color: #5cb85c;
+}
+
+}
+@media only screen and (min-width: 1200px) {
+.blogs .imgData{
+    width: 250px;
+    height:180px;
+    position: absolute;
+    right: 10%;
+    top: 20px;
+}
+    .blogs .info{
+            left: 10%;
+        position: absolute;
+    width: 50%;
+
+    }
+    .blogs .title{
+        position: absolute;
+    width: 60%;
+    font-size: 24px;
+    top: 20px;
+    display:inline-block;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+    }
+    .blogs .content{
+    position: absolute;
+    top: 60px;
+    font-size: 18px;
+    width: 60%;
+    display:inline-block;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+        .blogs .typeName{
+    position: absolute;
+    top: 150px;
+}
+                        .blogs .reading{
+    position: absolute;
+    top: 150px;
+                                left: 50%;
+
+    }
+            .blogs .addTime{
+    position: absolute;
+    top: 180px;
+}
+.blogs .read{
+    top: 180px;
+    position: absolute;
+    color: #5cb85c;
+    left: 50%;
+    text-decoration: none;
+}
+.blogs .read a:hover{
+    color: #9c3328;
+}
+
+
+}
+
+/*全局布置*/
+.blogs .imgData img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.blogs .title a{
+    color: #0C0C0C;
+    text-decoration: none;
+}
+.blogs .title a:hover{
+    color: #2D93CA;
+}
+.blogs:hover{
+    opacity: 0.8;
+    box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+
+}
+#mainer .pages{
+    margin-top:3vh ;
+    height: 6vh;
+}

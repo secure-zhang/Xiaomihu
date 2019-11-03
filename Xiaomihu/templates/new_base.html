@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
+    <title>Xiaomihu</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/new_base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/layui.css')}}">
+</head>
+<body>
+    <div class="hidden-lg">
+                            <nav class="navbar navbar-default">
+                              <div class="container">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Xiaomihu navigation</span>
+                                    <span class="caret"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                  </button>
+                                  <a class="navbar-brand" href="#">Xiao Mi Hu</a>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                  <ul class="nav navbar-nav navbar-right ">
+                                    <li><a href="{{url_for('index')}}">主页</a></li>
+                                    <li><a href="{{url_for('blogIndex')}}">博客</a></li>
+                                    <li><a href="{{url_for('photoIndex')}}">图集</a></li>
+                                    <li><a href="#">留言</a></li>
+                                    <li><a href="#">朋友</a></li>
+                                    <li><a href="#">关于</a></li>
+                                    <li class="dropdown">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多 <span class="caret"></span></a>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="#">图书</a></li>
+                                        <li><a href="#">电影</a></li>
+                                        <li><a href="#">音乐</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">时光轴</a></li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </div><!-- /.navbar-collapse -->
+                              </div><!-- /.container-fluid -->
+                            </nav>
+                        </div>
+    <div id="warper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1 lt ">
+                    <!--响应式导航-->
+                    <p class="menv visible-lg text-center">
+                        <a href="{{url_for('index')}}"><i class="layui-icon layui-icon-home" ></i>  </a>
+                        <a href="{{url_for('blogIndex')}}"><i class="layui-icon layui-icon-user" ></i>  </a>
+                        <a href="{{url_for('photoIndex')}}"><i class="layui-icon layui-icon-picture" ></i>  </a>
+                        <a href="https://weibo.com/u/6285420116"><i class="layui-icon layui-icon-login-weibo" ></i>  </a>
+                        <a data-toggle="modal" data-target=".bs-example-modal-sm"><i class="layui-icon layui-icon-login-wechat" ></i> </a>
+                        <a href=""><i class="layui-icon layui-icon-dialogue" ></i>  </a>
+                        <a href=""><i class="layui-icon layui-icon-share" ></i>  </a>
+                        <a href=""><i class="layui-icon layui-icon-friends" ></i>  </a>
+                        <a href=""><i class="layui-icon layui-icon-about" ></i>  </a>
+                    </p>
+                </div>
+                <div class="col-lg-11 rt">
+                    {% block base %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static',filename='js/layui.js')}}"></script>
+</html>
