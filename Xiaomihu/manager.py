@@ -6,10 +6,6 @@ from flask import render_template
 def index():
     return render_template('new_base.html')
 
-@app.route('/index',methods=['GET','POST'])
-def base():
-    return render_template('base.html')
-
 @app.route('/xk',methods=['GET','POST'])
 def xk():
     return render_template('xk.html')

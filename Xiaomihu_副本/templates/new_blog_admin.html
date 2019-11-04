@@ -1,0 +1,78 @@
+{% extends 'new_base.html' %}
+{% block base %}
+<link rel="stylesheet" href="{{ url_for('static',filename='editor/css/editormd.css') }}"/>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/new_blog_admin.css') }}"/>
+<div id="mainer">
+    <div class="container-fluid">
+        <form action="{{ url_for('blogAdmin') }}" method="post">
+            <div class="cen">
+                <div class="row cen1">
+                    <div class="col-xs-4">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon1">标题</span>
+                            {{ form.title(class='title form-control') }}
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="input-group">
+                          <span class="input-group-addon" id="basic-addon2">类型</span>
+                            {{ form.typeId(class='title form-contro2') }}
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <input id="uploaderFile" name="img" type="file" class="" data-add="0" accept="image/*" onchange="changeFile(this)"/>
+                        <input type="hidden" name="img64base" id="img64base"/>
+                    </div>
+                    <div class="col-xs-1">
+                        {{ form.csrf_token() }}
+                        {{ form.submit(class='btn btn-primary active') }}
+                    </div>
+                    <div class="col-xs-1">
+                        <a href="{{url_for('blogIndex')}}" class="btn btn-info active" role="button">返回</a>
+                    </div>
+                </div>
+                <div id="fancy-editormd" class="editormd cen2">
+                    {{ form.content(style="display:none;") }}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="{{ url_for('static',filename='editor/examples/js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='editor/editormd.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/lrz.bundle.js') }}"></script>
+
+<script type="text/javascript">
+    // 显示editor编辑器
+    $(function () {
+        editormd("fancy-editormd", {
+            // width: "100%", 请不要添加
+            height: 640,
+            syncScrolling: "single",
+            path: "{{ url_for('static',filename='editor/lib/') }}",
+            saveHTMLToTextarea : true
+        });
+    });
+    // 压缩图片,并写入input
+    var uploaderFile = document.querySelector('#uploaderFile');
+    uploaderFile.addEventListener('change', function () {
+     lrz(this.files[0])
+            .then(function (rst) {
+                // 处理成功会执行
+                console.log(rst.base64);
+                var img64base = document.querySelector('#img64base');
+                 img64base.value=rst.base64;
+                 uploaderFile.value='ok'
+            })
+            .catch(function (err) {
+                // 处理失败会执行
+            })
+            .always(function () {
+                // 不管是成功失败，都会执行
+            });
+    });
+</script>
+{% endblock %}

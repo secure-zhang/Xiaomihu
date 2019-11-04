@@ -1,0 +1,33 @@
+{% extends 'new_base.html' %}
+{% block base %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/photo/new_photo2.css') }}"/>
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script></head>
+
+<div id="mainer">
+    <div class="container-fluid">
+        <div class="row demo">
+            <div class="col-xs-12 ">
+                <div class="content ">
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-10-30_4.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-10-30_5.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-10-31_1.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-10-31_2.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/gallery-img-02.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/gallery-img-04.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/gallery-img-05.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/gallery-img-06.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-11-02_1.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-11-02_2.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-11-02_6.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-11-02_7.jpg) no-repeat center ;background-size: cover;"></div>
+                        <div class="content__img content__img--full" style="background:url(../static/image/png_2019-11-02_8.jpg) no-repeat center ;background-size: cover;"></div>
+                        <span class="content__title">小迷糊</span>
+                </div><!--/content-->
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="{{ url_for('static',filename='js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/TweenMax.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='js/photo/photo2.js')}}"></script>
+{% endblock %}

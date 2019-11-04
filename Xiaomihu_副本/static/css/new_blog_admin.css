@@ -1,0 +1,29 @@
+#mainer{
+    background-color: white;
+    min-height: 100vh;
+}
+#mainer .cen{
+    width: 80%;
+    margin-left: 10%;
+
+}
+#mainer .cen1{
+        margin-top: 5vh;
+}
+#mainer .cen2{
+    margin-top: 5vh;
+}
+#mainer .title{
+    height: 50px;
+    width: 80%;
+}
+#mainer .typeId{
+    height: 50px;
+        width: 80%;
+
+}
+#mainer #uploaderFile{
+        height: 50px;
+            width: 80%;
+
+}
