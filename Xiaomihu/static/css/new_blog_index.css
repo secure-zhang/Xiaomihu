@@ -2,48 +2,48 @@
 
 /*手机端*/
 @media only screen and (max-width: 1200px) {
-    #mainer .blogs{
+    #mainer .blog{
         height: 150px;
         border-bottom: 1px solid #CCCCCC;
         position: relative;
     }
-    .blogs .imgData{
+    .blog .imgData{
         width: 130px;
         height:90px;
         position: absolute;
         right: 0;
         top: 20px;
 }
-    .blogs .info{
+    .blog .info{
         position: absolute;
         width: 60%;
     }
-    .blogs .title{
+    .blog .title{
         position: absolute;
         font-size: 16px;
         top: 20px;
         word-wrap: break-word;word-break: break-all;overflow: hidden;text-overflow: ellipsis;display:inline-block;
 
     }
-    .blogs .content{
+    .blog .content{
         display: none;
 }
-    .blogs .typeName{
+    .blog .typeName{
         position: absolute;
         top: 110px;
         font-size: 11px;
         right: 10px;
 }
-    .blogs .addTime{
+    .blog .addTime{
         position: absolute;
         top: 110px;
         font-size: 11px;
         left: 0;
 }
-    .blogs .reading{
+    .blog .reading{
         display: none;
 }
-    .blogs .read{
+    .blog .read{
 
         display: none;
 
@@ -52,8 +52,13 @@
 }
 /*电脑端*/
 @media only screen and (min-width: 1200px) {
-    #mainer .blogs{
-    height: 220px;
+    #mainer{
+        background-color: white;
+        min-height: 100vh;
+
+    }
+    #mainer .blog{
+    height: 30vh;
     border-bottom: 1px solid #0C0C0C;
     position: relative;
 }
@@ -61,56 +66,56 @@
     width: 80%;
     margin: 0 auto;
 }
-    .blogs .imgData{
+    .blog .imgData{
         width: 250px;
         height:180px;
         position: absolute;
         right: 10%;
         top: 20px;
 }
-    .blogs .info{
+    .blog .info{
         left: 10%;
         position: absolute;
         width: 50%;
 
     }
-    .blogs .title{
+    .blog .title{
         position: absolute;
         width: 100%;
         font-size: 24px;
         top: 20px;
         display:inline-block;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
     }
-    .blogs .content{
+    .blog .content{
         position: absolute;
         top: 60px;
         font-size: 14px;
         width: 100%;
-        height: 40px;
+        max-height: 40px;
         word-wrap: break-word;word-break: break-all;overflow: hidden;text-overflow: ellipsis;display:inline-block;
         color: #4E5465;
 }
-    .blogs .typeName{
+    .blog .typeName{
         position: absolute;
         top: 150px;
         font-size: 12px;
         color: #4E5465;
 
 }
-    .blogs .reading{
+    .blog .reading{
         position: absolute;
         top: 150px;
         left: 50%;
         font-size: 12px;
         color: #4E5465;
     }
-    .blogs .addTime{
+    .blog .addTime{
         position: absolute;
         top: 180px;
         font-size: 12px;
         color: #4E5465;
 }
-    .blogs .read{
+    .blog .read{
         top: 180px;
         position: absolute;
         left: 50%;
@@ -118,7 +123,7 @@
         font-size: 12px;
         color: #4E5465;
 }
-.blogs .read a:hover{
+.blog .read a:hover{
     color: #9c3328;
 }
 
@@ -131,19 +136,19 @@
 
 
 
-.blogs .imgData img{
+.blog .imgData img{
     width: 100%;
     height: 100%;
     border-radius: 5px;
 }
-.blogs .title a{
+.blog .title a{
     color: #0C0C0C;
     text-decoration: none;
 }
-.blogs .title a:hover{
+.blog .title a:hover{
     color: #2D93CA;
 }
-.blogs:hover{
+.blog:hover{
     box-shadow:0px 5px 40px -1px rgba(2, 10, 18, 0.11);
 }
 #mainer .pages{

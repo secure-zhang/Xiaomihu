@@ -30,7 +30,7 @@
                                     <li><a href="{{url_for('index')}}">主页</a></li>
                                     <li><a href="{{url_for('blogIndex')}}">博客</a></li>
                                     <li><a href="{{url_for('photoIndex')}}">图集</a></li>
-                                    <li><a href="#">留言</a></li>
+                                    <li><a href="{{url_for('messageIndex')}}">留言</a></li>
                                     <li><a href="#">朋友</a></li>
                                     <li><a href="#">关于</a></li>
                                     <li class="dropdown">
@@ -59,7 +59,7 @@
                         <a href="{{url_for('photoIndex')}}"><i class="layui-icon layui-icon-picture" ></i>  </a>
                         <a href="https://weibo.com/u/6285420116"><i class="layui-icon layui-icon-login-weibo" ></i>  </a>
                         <a data-toggle="modal" data-target=".bs-example-modal-sm"><i class="layui-icon layui-icon-login-wechat" ></i> </a>
-                        <a href=""><i class="layui-icon layui-icon-dialogue" ></i>  </a>
+                        <a href="{{url_for('messageIndex')}}"><i class="layui-icon layui-icon-dialogue" ></i>  </a>
                         <a href=""><i class="layui-icon layui-icon-share" ></i>  </a>
                         <a href=""><i class="layui-icon layui-icon-friends" ></i>  </a>
                         <a href=""><i class="layui-icon layui-icon-about" ></i>  </a>
@@ -68,7 +68,9 @@
                 </div>
                 <div class="col-lg-11 rt">
                     {% block base %}
+                    <div id="mainer">
 
+                    </div>
                     {% endblock %}
                 </div>
 <!--               弹出微信-->

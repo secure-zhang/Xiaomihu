@@ -1,0 +1,54 @@
+{% extends 'new_base.html' %}
+{% block base %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/new_message.css') }}"/>
+<div id="mainer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 cen1 text-center">
+                <h1>留言板</h1>
+                <br>
+                <h3>来自{{addr}}的网友</h3>
+            </div>
+            <form action="{{url_for('messageIndex')}}" method="post">
+                <div class="row">
+                <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+                    {{ form.content(class='form-control',row=3,maxlength="999",style="resize:vertical") }}
+                </div>
+            </div>
+                <div class="row">
+                <div class="col-xs-12  col-lg-2 col-lg-offset-3">
+                    <div class="input-group ">
+                      <span class="input-group-addon" id="sizing-addon1">
+                          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                      </span>
+                        {{ form.name(class='form-control') }}
+
+                    </div>
+                </div>
+                <div class="col-xs-12  col-lg-3">
+                    <div class="input-group ">
+                      <span class="input-group-addon" id="sizing-addon2">
+                          @
+                      </span>
+                        {{ form.email(class='form-control') }}
+                    </div>
+                </div>
+                <div class="col-xs-12  col-lg-1">
+                    {{ form.csrf_token() }}
+                    {{ form.submit(class='btn sub',style="width: 100%") }}
+                </div>
+            </div>
+            </form>
+        </div>
+        {%for i in messageItems.items%}
+            <div class="row">
+                <div class="col-xs-12 col-lg-6 col-lg-offset-3  cen2">
+                    <h1>{{i.name}}</h1>
+                    <h4>{{i.addTime|time_filter}}在{{i.addr}}说:</h4>
+                    <span>{{i.content}}</>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}

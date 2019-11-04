@@ -7,43 +7,46 @@
     <div class="container-fluid">
         <div class="row">
                     <!--                博客列表页-->
-                    <div class="blogList">
-                        {% for i in blogItems.items%}
-                            <div class="blogs">
-                                <div class="imgData"><a href="{{url_for('blogDetail',blogId=i.id)}}"><img src="{{i.img64base}}" alt=""></a></div>
-                                <div class="info">
-                                                                    <div class="title">
-                                    <a href="{{url_for('blogDetail',blogId=i.id)}}">{{i.title}}</a>
-                                </div>
-                                <div class="content">
+            <div class="blogList">
+                {% for i in blogItems.items%}
+                    <div class="blog">
+                        <div class="imgData">
+                            <a href="{{url_for('blogDetail',blogId=i.id)}}">
+                                <img src="{{i.img64base}}" alt="">
+                            </a>
+                        </div>
+                        <div class="info">
+                            <div class="title">
+                            <a href="{{url_for('blogDetail',blogId=i.id)}}">{{i.title}}</a>
+                        </div>
+                            <div class="content">
 <!--                                    先调用safe转义过滤器, 再调用striptags清除html渲染后的格式-->
-                                    <span>{{i.content |safe|striptags|truncate  }}</span>
-                                </div>
-                                <div class="typeName">
-                                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-                                    {% if i.typeId==1 %}
-                                      <span>测试分类</span>
-                                     {% endif %}
-                                </div>
-                                <div class="addTime">
-                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                    <span>{{i.addTime|time_filter }}
-                                    </span>
-                                </div>
-                                <div class="reading">
-                                    <span class=" glyphicon glyphicon-eye-open " aria-hidden="true"></span>
-                                    <span>阅读({{i.reading}})</span>
-                                </div>
-                                <div class="read">
-                                    <a href="{{url_for('blogDetail',blogId=i.id)}}" class="">阅读原文</a>
-                                </div>
-                                </div>
+                                <span>{{i.content |safe|striptags|truncate  }}</span>
                             </div>
-                        {% endfor %}
+                            <div class="typeName">
+                                <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+                                {% if i.typeId==1 %}
+                                  <span>测试分类</span>
+                                 {% endif %}
+                            </div>
+                            <div class="addTime">
+                                <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                <span>{{i.addTime|time_filter }}
+                                </span>
+                            </div>
+                            <div class="reading">
+                                <span class=" glyphicon glyphicon-eye-open " aria-hidden="true"></span>
+                                <span>阅读({{i.reading}})</span>
+                            </div>
+                            <div class="read">
+                                <a href="{{url_for('blogDetail',blogId=i.id)}}" class="">阅读原文</a>
+                            </div>
+                        </div>
                     </div>
+                {% endfor %}
+            </div>
                    <!--                分页-->
-
-                    <div class=" page">
+            <div class=" page">
                         <div class="form-group text-center pages">
                             {% if blogItems.has_prev %}
                                 <a class="btn  btn-primary a_width  "  href="{{ url_for('blogIndex',page = blogItems.prev_num) }}">上一页</a>

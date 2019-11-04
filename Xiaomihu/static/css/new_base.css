@@ -63,3 +63,7 @@ body{
         color: #0b0b0b;
     }
 }
+#mainer{
+    min-height: 100vh;
+    background-color: white;
+}

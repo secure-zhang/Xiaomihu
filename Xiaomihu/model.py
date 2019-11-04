@@ -62,6 +62,7 @@ class Message(db.Model):
     name = db.Column(db.String(64), nullable=False)
     email = db.Column(db.String(64), nullable=False, unique=True)
     ip = db.Column(db.String(64), nullable=False)
+    addr = db.Column(db.String(64), nullable=False)
     content = db.Column(db.String(400), nullable=False)
     addTime = db.Column(db.DateTime(), nullable=False, default=datetime.now())
     def __repr__(self):
@@ -69,7 +70,7 @@ class Message(db.Model):
 
 if __name__ == '__main__':
     # db.drop_all()
-    # db.create_all()
+    db.create_all()
     #  添加分类
     # db.session.add(BlogType(typeName='测试分类'))
     # db.session.commit()
