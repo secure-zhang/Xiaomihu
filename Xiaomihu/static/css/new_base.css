@@ -1,7 +1,8 @@
 
 
-*{margin: 0;padding: 0}
-
+*{margin: 0;padding: 0;}
+#warper .rt{    font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+}
 body{
     font: 12px/1 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
     overflow-x: hidden;

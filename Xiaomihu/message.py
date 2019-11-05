@@ -5,7 +5,7 @@
 from __init__ import app
 from model import db
 from form import MessageForm
-from flask import Blueprint,render_template,request
+from flask import Blueprint,render_template,request,redirect,url_for
 from model import Message
 import requests
 import json
@@ -29,6 +29,7 @@ def messageIndex():
         messageData = Message(name=name, email=email, ip=ip, addr=addr, content=content,addTime=addTime)
         db.session.add(messageData)
         db.session.commit()
+        return redirect(url_for('messageIndex'))
     return render_template('new_message.html',addr=addr,form=form,messageItems=messageItems)
 
 # 通过ip获取位置
@@ -37,8 +38,6 @@ def get_addr(ip):
     res = requests.get(url)
     if res.status_code:
         item = json.loads(res.content.decode('utf-8'))
-        region = item['data'].get('region','')
-        city = item['data'].get('city','')
-        addr = '%s%s'%(region,city)
+        addr = item['data'].get('region','')
         return addr
     return '地球'

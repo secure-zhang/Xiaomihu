@@ -8,7 +8,35 @@
 #mainer .cen1 h1{
     font-weight: bold;
 }
-#mainer .cen2{
-    margin-top: 10vh;
-    height: 200px;
+
+#mainer .cen3{
+    margin-top: 5vh;
+    min-height: 25vh;
+    position: relative;
+    box-shadow:0 5px 12px rgba(0,0,0,0.05),0 15px 15px 0 rgba(0,0,50,0.25);
+    border-radius: 5px;
+    opacity: 0.6;
 }
+#mainer .cen3:hover{
+        opacity: 0.8;
+}
+#mainer .cen3 .name{
+    position: absolute;
+    top: 20px;
+    font-size: 18px;
+    left: 20px;
+    color: #0b0b0b;
+}
+#mainer .cen3 .addr{
+    font-size: 14px;
+    color: #9d9d9d;
+}
+#mainer .cen3 .content{
+    font-size: 16px;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    text-indent:2em;
+}
+
+
